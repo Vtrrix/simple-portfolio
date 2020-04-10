@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin flexit($flex_direction) {
+    display: flex;
+    flex-direction: $flex_direction;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+body{
+
+    @include flexit(column);
+
+    .back{
+        background: royalblue;
+        height: 200px;
+        width: 100%;
+    }
+    #leader{
+        transform: translateY(-120px);
+        max-width: 900px;
+        background: rgb(247, 247, 247);
+        box-shadow:  6px 4px 15px 0px rgba(0,0,0,0.38);
+
+
+
+        #top{
+            height: 50%;
+            width: 100%;
+            @include flexit(column);
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+
+
+
+            .pic{
+                margin: 15px;
+            
+
+                img{
+                    width: 140px;
+                    height: 140px;
+                    border-radius: 50%;
+                }
+            }
+            .name{
+                font-family: 'Noto Sans', sans-serif;
+                font-size: 2.5rem;
+
+            }
+            .about{
+                padding: 20px;
+
+            }
+
+        }
+        .line{
+            transform: translateX(7.5%);
+            width: 85%;
+            opacity: 0.15;
+        }
+
+        #bottom{
+            position: relative;
+            height: 50%;
+            width: 100%;
+            @include flexit(column);
+
+            .skills{
+                font-family: 'Roboto', sans-serif;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 70px;
+
+                .title{
+                    padding: 15px;
+                    font-family: 'Noto Sans', sans-serif;
+                    font-size: 2.1rem;
+                }
+                .list{
+                    text-align: left;
+                    width: 100%;
+
+                    ul{
+                        @include flexit(row);
+                        width: 100%;
+                        list-style: none;
+
+                        li{
+                            padding: 8px;
+                            margin: 10px 50px;
+                        }
+                    }
+                }
+                
+
+            }
+
+            #credits{
+                font-family: 'Roboto', sans-serif;
+                color: rgb(241, 241, 241);
+                position: absolute;
+                padding: 10px;
+                bottom: 0;
+                width: 100%;
+                background: rgb(146, 146, 146);
+                text-align: center;
+            }
+        }
+
+
+        
+
+    }
+
+}
+
+@media only screen and (max-width: 940px) {
+    #leader{
+        width: 90%;
+    }
+  }
